@@ -1,5 +1,4 @@
-import { BottomNav } from "@/components";
-import HeroCover from "@/components/HeroCover";
+import { BottomNav, HeroCover } from "@/components";
 import AudioProvider from "@/context/audioContext";
 
 const Homelayout = ({ children }: { children: React.ReactNode }) => {

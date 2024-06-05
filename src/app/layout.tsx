@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Josefin_Sans } from "next/font/google";
+import { Great_Vibes, Josefin_Sans } from "next/font/google";
 import "./globals.css";
 
 const josefinSans = Josefin_Sans({ subsets: ["latin"], variable: "--font-josefin-sans", display: "swap" });
+
+const greatVibes = Great_Vibes({ subsets: ["latin"], variable: "--font-great-vibes", display: "swap", weight: ["400"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${josefinSans.className} bg-accent`}>{children}</body>
+      <body className={`${josefinSans.className} ${greatVibes.variable} bg-accent`}>{children}</body>
     </html>
   );
 }
