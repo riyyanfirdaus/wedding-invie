@@ -25,6 +25,7 @@ export default function Home() {
           <TimerCountdown />
         </div>
       </section>
+      
       <RsvpForm />
       <section className="min-h-48 bg-accent w-full py-4">
         <h1 className="text-center font-bold text-2xl text-primary">Love Notes</h1>
