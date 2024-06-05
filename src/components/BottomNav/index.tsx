@@ -17,7 +17,7 @@ const BottomNav = () => {
 
   return (
     <div className="flex justify-between items-center max-w-[480px] w-full fixed bottom-4 z-10 px-4">
-      <div className="flex items-center justify-center bg-secondary w-56 p-4 rounded-full">
+      <div className="flex items-center justify-center bg-secondary shadow-lg w-56 p-4 rounded-full">
         <div className="flex items-center justify-between w-full">
           <div className="p-2 rounded-full bg-accent text-secondary cursor-pointer">
             <Heart />
@@ -33,7 +33,7 @@ const BottomNav = () => {
           </div>
         </div>
       </div>
-      <div className={`${isPlaying ? "bg-accent text-secondary" : "bg-secondary text-accent"} rounded-full p-4 cursor-pointer`} onClick={handlePlaying}>
+      <div className={`${isPlaying ? "bg-accent text-secondary" : "bg-secondary text-accent"} shadow-lg rounded-full p-4 cursor-pointer`} onClick={handlePlaying}>
         <Music />
       </div>
       <audio src="/music.mp3" ref={audioRef} />
