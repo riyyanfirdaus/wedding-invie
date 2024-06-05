@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 const RsvpForm = () => {
   const searchParams = useSearchParams();
-  const guest = searchParams.get("kpd");
+  const guest = searchParams.get("kpd") ?? "Guest";
 
   const nama = useRef(null);
   const pesanSingkat = useRef(null);
@@ -24,7 +24,7 @@ const RsvpForm = () => {
               name="nama"
               type="nama"
               ref={nama}
-              defaultValue={guest ? guest.charAt(0).toUpperCase() + guest.slice(1) : "Guest"}
+              defaultValue={guest.charAt(0).toUpperCase() + guest.slice(1)}
               autoComplete="nama"
               className="block w-full rounded-md border-0 p-2 text-accent shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />

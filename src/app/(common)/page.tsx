@@ -1,8 +1,7 @@
-import Image from "next/image";
 import BgMainImg from "@/assets/bg-main-img.webp";
 import { TimerCountdown } from "@/components";
 import { RsvpForm } from "@/features";
-import { Suspense } from "react";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -26,9 +25,7 @@ export default function Home() {
           <TimerCountdown />
         </div>
       </section>
-      <Suspense>
-        <RsvpForm />
-      </Suspense>
+      <RsvpForm />
       <section className="min-h-48 bg-accent w-full py-4">
         <h1 className="text-center font-bold text-2xl text-primary">Love Notes</h1>
         <div></div>
