@@ -11,8 +11,8 @@ const RsvpForm = () => {
   const pesanSingkat = useRef(null);
 
   return (
-    <section className="w-72 py-10">
-      <h1 className="text-center font-bold text-2xl text-accent">RSVP</h1>
+    <section className="w-full px-6 py-12 space-y-8">
+      <h1 className="font-great-vibes font-bold text-accent text-4xl text-center">RSVP</h1>
       <form className="space-y-4">
         <div>
           <label htmlFor="nama" className="block text-base font-medium leading-6 text-accent">
