@@ -1,9 +1,10 @@
+import { BCALogo, BNILogo, CreditCardChip } from "@/assets/Icon";
 import BgMainImg from "@/assets/bg-main-img.webp";
-import { Note, TimerCountdown } from "@/components";
+import GalleryPhoto from "@/assets/gallery-photo.webp";
+import { CopyToClipboard, Note, TimerCountdown } from "@/components";
 import { RsvpForm } from "@/features";
 import { MapPin } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -28,10 +29,30 @@ export default function Home() {
         </div>
       </section>
       <section className="w-full flex flex-col items-center text-center space-y-8 px-6 py-12">
-        <h1 className="font-great-vibes font-bold text-accent text-4xl">Bride & Groom</h1>
+        <h1 className="font-great-vibes font-bold text-accent text-4xl tracking-wider">Bride & Groom</h1>
+        <div className="space-y-20">
+          <div className="text-center space-y-4">
+            <p className="text-sm text-accent font-semibold">Assalamualaikum Warahmatullahi Wabarakaatuh</p>
+            <p className="text-sm text-accent">Dengan memohon Rahmat dan Ridho Allah SWT, kami bermaksud menyelenggarakan pernikahan</p>
+          </div>
+          <div className="flex flex-col items-center gap-y-6">
+            <Image className="object-cover rounded-full w-48 h-48" src={GalleryPhoto} alt="" />
+            <div>
+              <span className="text-accent text-xl font-semibold">Akbar</span>
+              <p className="text-accent text-sm">​Anak terakhir dari Bapak ..... dan Ibu .....</p>
+            </div>
+          </div>
+          <div className="flex flex-col items-center gap-y-6">
+            <Image className="object-cover rounded-full w-48 h-48" src={GalleryPhoto} alt="" />
+            <div>
+              <span className="text-accent text-xl font-semibold">Syifa</span>
+              <p className="text-accent text-sm">​Anak tunggal dari Bapak ..... dan Ibu .....</p>
+            </div>
+          </div>
+        </div>
       </section>
       <section className="bg-accent w-full flex flex-col items-center text-center space-y-8 px-6 py-12">
-        <h1 className="font-great-vibes font-bold text-primary text-4xl">Save The Date</h1>
+        <h1 className="font-great-vibes font-bold text-primary text-4xl tracking-wider">Save The Date</h1>
         <div className="text-primary space-y-4 mt-4">
           <p>وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةًۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ</p>
           <p className="text-xs">
@@ -47,7 +68,7 @@ export default function Home() {
             <p>09:00-11:00</p>
             <p>Gedung Catur</p>
             <p>Citerep, Kec. Ciruas, Kabupaten Serang, Banten</p>
-            <a className="flex items-center gap-x-2 bg-accent text-primary rounded-md px-4 py-2 mt-2" href={""} target="_blank">
+            <a className="flex items-center gap-x-2 bg-accent text-primary rounded-md px-4 py-2 mt-2" href={"https://maps.app.goo.gl/cTeHbXbPJjnzzMAx6"} target="_blank">
               <MapPin /> Lihat Peta
             </a>
           </div>
@@ -57,22 +78,75 @@ export default function Home() {
             <p>12:30-11:00</p>
             <p>Gedung Catur</p>
             <p>Citerep, Kec. Ciruas, Kabupaten Serang, Banten</p>
-            <a className="flex items-center gap-x-2 bg-accent text-primary rounded-md px-4 py-2 mt-2" href={""} target="_blank">
+            <a className="flex items-center gap-x-2 bg-accent text-primary rounded-md px-4 py-2 mt-2" href={"https://maps.app.goo.gl/cTeHbXbPJjnzzMAx6"} target="_blank">
               <MapPin /> Lihat Peta
             </a>
           </div>
         </div>
       </section>
       <section className="w-full flex flex-col items-center text-center space-y-8 px-6 py-12">
-        <h1 className="font-great-vibes font-bold text-accent text-4xl">Our Gallery</h1>
+        <h1 className="font-great-vibes font-bold text-accent text-4xl tracking-wider">Our Gallery</h1>
+        <div className="grid grid-cols-2 gap-4">
+          {Array.from({ length: 8 }).map((_, idx) => (
+            <Image src={GalleryPhoto} className="object-cover rounded-md" alt="" key={idx} />
+          ))}
+        </div>
       </section>
       <section className="bg-accent w-full flex flex-col items-center text-center space-y-8 px-6 py-12">
         <h1 className="font-great-vibes font-bold text-primary text-4xl">Titip Hadiah</h1>
+        <div className="flex flex-col gap-y-10 w-full">
+          <div className="bg-gradient-to-br from-primary to-secondary rounded-lg p-4 space-y-4 shadow-lg">
+            <div className="flex items-center justify-between">
+              <CreditCardChip />
+              <BCALogo />
+            </div>
+            <div className="flex flex-col items-start gap-y-2">
+              <span className="inline text-xs text-accent">Nomor Rekening</span>
+              <div className="flex gap-x-4 text-accent">
+                <p className="text-2xl font-bold">1234567890</p>
+                <CopyToClipboard content="1234567890" />
+              </div>
+            </div>
+            <div className="flex justify-between">
+              <div className="flex flex-col items-start">
+                <span className="inline text-xs text-accent">Atas Nama</span>
+                <p className="text-lg text-accent font-bold">Akbar</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="inline text-xs text-accent">Pernikahan</span>
+                <p className="text-lg text-accent font-bold">14/09/2024</p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-gradient-to-br from-primary to-secondary rounded-lg p-4 space-y-4 shadow-lg">
+            <div className="flex items-center justify-between">
+              <CreditCardChip />
+              <BNILogo />
+            </div>
+            <div className="flex flex-col items-start gap-y-2">
+              <span className="inline text-xs text-accent">Nomor Rekening</span>
+              <div className="flex gap-x-4 text-accent">
+                <p className="text-2xl font-bold">0987654321</p>
+                <CopyToClipboard content="0987654321" />
+              </div>
+            </div>
+            <div className="flex justify-between">
+              <div className="flex flex-col items-start">
+                <span className="inline text-xs text-accent">Atas Nama</span>
+                <p className="text-lg text-accent font-bold">Syifa</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="inline text-xs text-accent">Pernikahan</span>
+                <p className="text-lg text-accent font-bold">14/09/2024</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
       <RsvpForm />
       <section className="bg-accent w-full flex flex-col items-center space-y-8 px-6 py-12">
-        <h1 className="font-great-vibes font-bold text-primary text-4xl">Love Notes</h1>
-        <div className="bg-primary w-full max-h-80 overflow-y-auto flex flex-col gap-y-4 rounded-lg shadow-xl p-3">
+        <h1 className="font-great-vibes font-bold text-primary text-4xl tracking-wider">Love Notes</h1>
+        <div className="bg-primary w-full max-h-[420px] overflow-y-auto flex flex-col gap-y-4 rounded-lg shadow-xl p-3">
           {Array.from({ length: 20 }).map((_, idx) => (
             <Note key={idx} />
           ))}

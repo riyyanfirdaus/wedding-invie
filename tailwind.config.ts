@@ -9,9 +9,9 @@ const config: Config = {
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        primary: "#FFF2D8",
-        secondary: "#EAD7BB",
-        accent: "#113946",
+        primary: "#FEFBF3",
+        secondary: "#F8F0DF",
+        accent: "#9D9D9D",
       },
       fontFamily: {
         "josefin-sans": ["var(--font-josefin-sans)"],

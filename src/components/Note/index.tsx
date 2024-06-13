@@ -5,7 +5,7 @@ const Note = () => {
         <h2 className="font-bold">Budi</h2>
         <p className="text-sm">Selamat ya</p>
       </div>
-      <span className="bg-green-800 h-fit rounded-md text-xs text-primary px-3 py-1">Hadir</span>
+      <span className="bg-green-400 h-fit rounded-md text-xs text-primary px-3 py-1">Hadir</span>
     </div>
   );
 };
