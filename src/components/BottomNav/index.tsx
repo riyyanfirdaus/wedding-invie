@@ -1,11 +1,13 @@
 "use client";
 import { AudioContext, AudioContextType } from "@/context/audioContext";
-import { CalendarClock, Heart, MapPin, Music, User } from "lucide-react";
+import { CalendarClock, Heart, Images, Music, User } from "lucide-react";
 import { useContext, useEffect, useRef, useState } from "react";
 
 const BottomNav = () => {
   const { isPlaying, handlePlaying } = useContext(AudioContext) as AudioContextType;
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const [isSection, setIsSection] = useState<string>("main");
 
   useEffect(() => {
     if (isPlaying) {
@@ -15,22 +17,28 @@ const BottomNav = () => {
     }
   }, [isPlaying, audioRef]);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({ behavior: "smooth" });
+    setIsSection(id);
+  };
+
   return (
     <div className="flex justify-between items-center max-w-[480px] w-full fixed bottom-4 z-10 px-4">
       <div className="flex items-center justify-center bg-secondary shadow-lg w-56 p-4 rounded-full">
         <div className="flex items-center justify-between w-full">
-          <div className="p-2 rounded-full bg-accent text-secondary cursor-pointer">
+          <button className={`p-2 rounded-full cursor-pointer ${isSection === "main" ? "bg-accent text-secondary " : "text-accent"}`} onClick={() => scrollToSection("main")}>
             <Heart />
-          </div>
-          <div className="p-2 rounded-full text-accent cursor-pointer">
+          </button>
+          <button className={`p-2 rounded-full cursor-pointer ${isSection === "bride-and-groom" ? "bg-accent text-secondary " : "text-accent"}`} onClick={() => scrollToSection("bride-and-groom")}>
             <User />
-          </div>
-          <div className="p-2 rounded-full text-accent cursor-pointer">
+          </button>
+          <button className={`p-2 rounded-full cursor-pointer ${isSection === "save-the-date" ? "bg-accent text-secondary " : "text-accent"}`} onClick={() => scrollToSection("save-the-date")}>
             <CalendarClock />
-          </div>
-          <div className="p-2 rounded-full text-accent cursor-pointer">
-            <MapPin />
-          </div>
+          </button>
+          <button className={`p-2 rounded-full cursor-pointer ${isSection === "our-gallery" ? "bg-accent text-secondary " : "text-accent"}`} onClick={() => scrollToSection("our-gallery")}>
+            <Images />
+          </button>
         </div>
       </div>
       <div className={`${isPlaying ? "bg-accent text-secondary" : "bg-secondary text-accent"} shadow-lg rounded-full p-4 cursor-pointer`} onClick={handlePlaying}>

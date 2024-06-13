@@ -9,7 +9,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="flex w-full min-h-screen bg-primary flex-col items-center justify-between">
-      <section className="relative min-h-screen w-full">
+      <section className="relative min-h-screen w-full" id="main">
         <Image src={BgMainImg} className="h-screen object-cover" alt="" />
         <div className="absolute top-0 h-screen w-full flex flex-col items-center justify-center md:top-10">
           <div className="text-center text-primary">
@@ -28,7 +28,7 @@ export default function Home() {
           <TimerCountdown />
         </div>
       </section>
-      <section className="w-full flex flex-col items-center text-center space-y-8 px-6 py-12">
+      <section className="w-full flex flex-col items-center text-center space-y-8 px-6 py-12" id="bride-and-groom">
         <h1 className="font-great-vibes font-bold text-accent text-4xl tracking-wider">Bride & Groom</h1>
         <div className="space-y-20">
           <div className="text-center space-y-4">
@@ -51,7 +51,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-accent w-full flex flex-col items-center text-center space-y-8 px-6 py-12">
+      <section className="bg-accent w-full flex flex-col items-center text-center space-y-8 px-6 py-12" id="save-the-date">
         <h1 className="font-great-vibes font-bold text-primary text-4xl tracking-wider">Save The Date</h1>
         <div className="text-primary space-y-4 mt-4">
           <p>وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةًۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ</p>
@@ -84,7 +84,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full flex flex-col items-center text-center space-y-8 px-6 py-12">
+      <section className="w-full flex flex-col items-center text-center space-y-8 px-6 py-12" id="our-gallery">
         <h1 className="font-great-vibes font-bold text-accent text-4xl tracking-wider">Our Gallery</h1>
         <div className="grid grid-cols-2 gap-4">
           {Array.from({ length: 8 }).map((_, idx) => (
