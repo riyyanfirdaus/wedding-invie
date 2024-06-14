@@ -37,7 +37,7 @@ export default async function Home() {
           <TimerCountdown />
         </div>
       </section>
-      <section className="w-full flex flex-col items-center text-center space-y-8 px-6 py-12" id="bride-and-groom">
+      <section className="bg-gradient-to-br from-primary to-secondary w-full flex flex-col items-center text-center space-y-8 px-6 py-12" id="bride-and-groom">
         <h1 className="font-great-vibes font-bold text-accent text-4xl tracking-wider">Bride & Groom</h1>
         <div className="space-y-20">
           <div className="text-center space-y-4">
@@ -70,7 +70,7 @@ export default async function Home() {
           </p>
           <p className="text-xs">Surah Ar-Rum Ayat 21</p>
         </div>
-        <div className="bg-primary rounded-tl-3xl rounded-tr-3xl space-y-20 px-4 py-8">
+        <div className="bg-gradient-to-br from-primary to-secondary rounded-tl-3xl rounded-tr-3xl space-y-20 px-4 py-8">
           <div className="text-accent flex flex-col items-center gap-y-2">
             <h2 className="font-bold text-xl">Akad</h2>
             <p>Sabtu, 14 September 2024</p>
@@ -93,7 +93,7 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full flex flex-col items-center text-center space-y-8 px-6 py-12" id="our-gallery">
+      <section className="bg-gradient-to-br from-primary to-secondary w-full flex flex-col items-center text-center space-y-8 px-6 py-12" id="our-gallery">
         <h1 className="font-great-vibes font-bold text-accent text-4xl tracking-wider">Our Gallery</h1>
         <div className="grid grid-cols-2 gap-4">
           {Array.from({ length: 8 }).map((_, idx) => (
@@ -161,7 +161,7 @@ export default async function Home() {
           ))}
         </div>
       </section>
-      <footer className="min-h-48 grid place-items-start pt-12">
+      <footer className="bg-gradient-to-b from-primary to-secondary min-h-48 grid place-items-start pt-12">
         <span className="text-accent">
           made by{" "}
           <a className="font-semibold" href="http://instagram.com/riyyan_firdaus" target="_blank" rel="noopener noreferrer">

@@ -20,8 +20,8 @@ const RsvpForm = () => {
   };
 
   return (
-    <section className="w-full px-6 py-12 space-y-8">
-      <h1 className="font-great-vibes font-bold text-primary text-4xl tracking-wider">RSVP</h1>
+    <section className="bg-gradient-to-br from-primary to-secondary w-full px-6 py-12 space-y-8">
+      <h1 className="font-great-vibes font-bold text-accent text-4xl tracking-wider">RSVP</h1>
       <form className="space-y-4" action={createAction} ref={formRef}>
         <div>
           <label htmlFor="name" className="block text-base font-medium leading-6 text-accent">
