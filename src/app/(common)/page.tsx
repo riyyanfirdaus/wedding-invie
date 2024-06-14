@@ -161,7 +161,7 @@ export default async function Home() {
           ))}
         </div>
       </section>
-      <footer className="bg-gradient-to-b from-primary to-secondary w-full min-h-48 pt-12 grid place-content-center">
+      <footer className="bg-gradient-to-b from-primary to-secondary w-full min-h-48 pt-12 flex justify-center">
         <span className="text-accent">
           made by{" "}
           <a className="font-semibold" href="http://instagram.com/riyyan_firdaus" target="_blank" rel="noopener noreferrer">
