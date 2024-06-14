@@ -70,7 +70,7 @@ export default async function Home() {
           </p>
           <p className="text-xs">Surah Ar-Rum Ayat 21</p>
         </div>
-        <div className="bg-gradient-to-br from-primary to-secondary rounded-tl-3xl rounded-tr-3xl space-y-20 px-4 py-8">
+        <div className="bg-gradient-to-b from-primary to-secondary rounded-tl-3xl rounded-tr-3xl space-y-20 px-4 py-8">
           <div className="text-accent flex flex-col items-center gap-y-2">
             <h2 className="font-bold text-xl">Akad</h2>
             <p>Sabtu, 14 September 2024</p>
@@ -161,7 +161,7 @@ export default async function Home() {
           ))}
         </div>
       </section>
-      <footer className="bg-gradient-to-b from-primary to-secondary min-h-48 grid place-items-start pt-12">
+      <footer className="bg-gradient-to-b from-primary to-secondary w-full min-h-48 pt-12 grid place-content-center">
         <span className="text-accent">
           made by{" "}
           <a className="font-semibold" href="http://instagram.com/riyyan_firdaus" target="_blank" rel="noopener noreferrer">
