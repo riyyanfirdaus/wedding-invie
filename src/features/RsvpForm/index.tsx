@@ -2,44 +2,51 @@
 
 import { useSearchParams } from "next/navigation";
 import { useRef } from "react";
+import { create } from "./action";
 
 const RsvpForm = () => {
   const searchParams = useSearchParams();
   const guest = searchParams.get("kpd") ?? "Guest";
 
-  const nama = useRef(null);
-  const pesanSingkat = useRef(null);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const createAction = async (formData: FormData) => {
+    try {
+      await create(formData);
+      formRef.current?.reset();
+    } catch (error) {
+      throw new Error("error");
+    }
+  };
 
   return (
     <section className="w-full px-6 py-12 space-y-8">
-      <h1 className="font-great-vibes font-bold text-accent text-4xl text-center">RSVP</h1>
-      <form className="space-y-4">
+      <h1 className="font-great-vibes font-bold text-primary text-4xl tracking-wider">RSVP</h1>
+      <form className="space-y-4" action={createAction} ref={formRef}>
         <div>
-          <label htmlFor="nama" className="block text-base font-medium leading-6 text-accent">
+          <label htmlFor="name" className="block text-base font-medium leading-6 text-accent">
             Nama
           </label>
           <div className="mt-2">
             <input
-              id="nama"
-              name="nama"
-              type="nama"
-              ref={nama}
+              id="name"
+              name="name"
+              type="name"
               defaultValue={guest.charAt(0).toUpperCase() + guest.slice(1)}
-              autoComplete="nama"
+              autoComplete="name"
               className="block w-full rounded-md border-0 p-2 text-accent shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
           </div>
         </div>
         <div>
-          <label htmlFor="pesanSingkat" className="block text-base font-medium leading-6 text-accent">
+          <label htmlFor="messages" className="block text-base font-medium leading-6 text-accent">
             Pesan Singkat
           </label>
           <div className="mt-2">
             <textarea
-              id="pesanSingkat"
-              name="pesanSingkat"
+              id="messages"
+              name="messages"
               rows={3}
-              ref={pesanSingkat}
               className="block w-full rounded-md border-0 p-2 text-accent shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               defaultValue={""}
             />
@@ -49,14 +56,14 @@ const RsvpForm = () => {
           <span className="block text-base font-medium leading-6 text-accent">Kehadiran</span>
           <div className="flex items-center gap-x-6 mt-2">
             <div className="flex items-center gap-x-1">
-              <input id="push-everything" name="push-notifications" type="radio" className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600" defaultChecked />
-              <label htmlFor="push-everything" className="block text-s font-medium leading-6 text-accent">
+              <input id="hadir" name="presence" type="radio" className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600" value={"true"} defaultChecked />
+              <label htmlFor="hadir" className="block text-s font-medium leading-6 text-accent">
                 Hadir
               </label>
             </div>
             <div className="flex items-center gap-x-1">
-              <input id="push-email" name="push-notifications" type="radio" className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600" />
-              <label htmlFor="push-email" className="block text-s font-medium leading-6 text-accent">
+              <input id="tidak-hadir" name="presence" type="radio" className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600" value={"false"} />
+              <label htmlFor="tidak-hadir" className="block text-s font-medium leading-6 text-accent">
                 Tidak Hadir
               </label>
             </div>

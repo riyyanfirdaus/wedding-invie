@@ -3,10 +3,19 @@ import BgMainImg from "@/assets/bg-main-img.webp";
 import GalleryPhoto from "@/assets/gallery-photo.webp";
 import { CopyToClipboard, Note, TimerCountdown } from "@/components";
 import { RsvpForm } from "@/features";
+import { neon } from "@neondatabase/serverless";
 import { MapPin } from "lucide-react";
 import Image from "next/image";
 
-export default function Home() {
+async function getData() {
+  const sql = neon(process.env.DATABASE_URL as string);
+  const response = await sql`SELECT id, name, messages, presence FROM love_notes`;
+  return response;
+}
+
+export default async function Home() {
+  const data = await getData();
+
   return (
     <main className="flex w-full min-h-screen bg-primary flex-col items-center justify-between">
       <section className="relative min-h-screen w-full" id="main">
@@ -65,7 +74,7 @@ export default function Home() {
           <div className="text-accent flex flex-col items-center gap-y-2">
             <h2 className="font-bold text-xl">Akad</h2>
             <p>Sabtu, 14 September 2024</p>
-            <p>09:00-11:00</p>
+            <p>09:00-11:00 WIB</p>
             <p>Gedung Catur</p>
             <p>Citerep, Kec. Ciruas, Kabupaten Serang, Banten</p>
             <a className="flex items-center gap-x-2 bg-accent text-primary rounded-md px-4 py-2 mt-2" href={"https://maps.app.goo.gl/cTeHbXbPJjnzzMAx6"} target="_blank">
@@ -75,7 +84,7 @@ export default function Home() {
           <div className="text-accent flex flex-col items-center gap-y-2">
             <h2 className="font-bold text-xl">Resepsi</h2>
             <p>Sabtu, 14 September 2024</p>
-            <p>12:30-11:00</p>
+            <p>12:30-11:00 WIB</p>
             <p>Gedung Catur</p>
             <p>Citerep, Kec. Ciruas, Kabupaten Serang, Banten</p>
             <a className="flex items-center gap-x-2 bg-accent text-primary rounded-md px-4 py-2 mt-2" href={"https://maps.app.goo.gl/cTeHbXbPJjnzzMAx6"} target="_blank">
@@ -146,9 +155,9 @@ export default function Home() {
       <RsvpForm />
       <section className="bg-accent w-full flex flex-col items-center space-y-8 px-6 py-12">
         <h1 className="font-great-vibes font-bold text-primary text-4xl tracking-wider">Love Notes</h1>
-        <div className="bg-primary w-full max-h-[420px] overflow-y-auto flex flex-col gap-y-4 rounded-lg shadow-xl p-3">
-          {Array.from({ length: 20 }).map((_, idx) => (
-            <Note key={idx} />
+        <div className="bg-primary w-full h-[420px] overflow-y-auto flex flex-col gap-y-4 rounded-lg shadow-xl p-3">
+          {data.map((item) => (
+            <Note key={item.id} data={item} />
           ))}
         </div>
       </section>
