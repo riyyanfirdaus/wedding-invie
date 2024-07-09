@@ -1,11 +1,11 @@
-import { BCALogo, BNILogo, CreditCardChip } from "@/assets/Icon";
 import BgMainImg from "@/assets/bg-main-img.webp";
 import GalleryPhoto from "@/assets/gallery-photo.webp";
-import { BlurFade, CopyToClipboard, Marquee, Note, TimerCountdown } from "@/components";
+import { Marquee, Note, PhotoGallery, TimerCountdown } from "@/components";
 import { RsvpForm } from "@/features";
 import { neon } from "@neondatabase/serverless";
 import { MapPin } from "lucide-react";
 import Image from "next/image";
+import "react-photo-view/dist/react-photo-view.css";
 
 async function getData() {
   const sql = neon(process.env.DATABASE_URL as string);
@@ -98,16 +98,7 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-gradient-to-br from-primary to-secondary w-full flex flex-col items-center text-center space-y-8 px-6 py-12" id="our-gallery">
-        <h1 className="font-great-vibes font-bold text-accent text-4xl tracking-wider">Our Gallery</h1>
-        <div className="grid grid-cols-2 gap-4">
-          {Array.from({ length: 8 }).map((_, idx) => (
-            <BlurFade key={idx} delay={0.25 + idx * 0.05} inView>
-              <Image src={GalleryPhoto} className="object-cover rounded-md" alt="" />
-            </BlurFade>
-          ))}
-        </div>
-      </section>
+      <PhotoGallery />
       <RsvpForm />
       <section className="bg-accent w-full flex flex-col items-center space-y-8 px-6 py-12">
         <h1 className="font-great-vibes font-bold text-primary text-4xl tracking-wider">Love Notes</h1>
