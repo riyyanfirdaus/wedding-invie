@@ -19,11 +19,21 @@ const config: Config = {
       },
       animation: {
         flip: "flip 1s cubic-bezier(0, 0, 0.2, 1) infinite",
+        marquee: "marquee var(--duration) linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
       },
       keyframes: {
         flip: {
           from: { transform: "rotateX(0deg)", transformOrigin: "50% bottom " },
           to: { transform: "rotateX(180deg)", transformOrigin: "50% bottom " },
+        },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
         },
       },
     },

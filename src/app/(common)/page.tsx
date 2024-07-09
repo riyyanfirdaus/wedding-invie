@@ -1,7 +1,7 @@
 import { BCALogo, BNILogo, CreditCardChip } from "@/assets/Icon";
 import BgMainImg from "@/assets/bg-main-img.webp";
 import GalleryPhoto from "@/assets/gallery-photo.webp";
-import { CopyToClipboard, Note, TimerCountdown } from "@/components";
+import { BlurFade, CopyToClipboard, Marquee, Note, TimerCountdown } from "@/components";
 import { RsvpForm } from "@/features";
 import { neon } from "@neondatabase/serverless";
 import { MapPin } from "lucide-react";
@@ -20,7 +20,7 @@ export default async function Home() {
     <main className="flex w-full min-h-screen bg-primary flex-col items-center justify-between">
       <section className="relative min-h-screen w-full" id="main">
         <Image src={BgMainImg} className="h-screen object-cover" alt="" />
-        <div className="absolute top-0 h-screen w-full flex flex-col items-center justify-center md:top-10">
+        <div className="absolute top-0 h-screen w-full flex flex-col items-center justify-center  overflow-x-auto md:top-10">
           <div className="text-center text-primary">
             <h2 className="text-xl mb-6">THE WEDDING OF</h2>
             <div className="relative flex justify-center">
@@ -35,6 +35,11 @@ export default async function Home() {
             </div>
           </div>
           <TimerCountdown />
+          <Marquee pauseOnHover className="[--duration:20s] mt-10">
+            {Array.from({ length: 4 }).map((_, i) => (
+              <Image src={GalleryPhoto} className="w-32 object-cover" key={i} alt="" />
+            ))}
+          </Marquee>
         </div>
       </section>
       <section className="bg-gradient-to-br from-primary to-secondary w-full flex flex-col items-center text-center space-y-8 px-6 py-12" id="bride-and-groom">
@@ -45,14 +50,14 @@ export default async function Home() {
             <p className="text-sm text-accent">Dengan memohon Rahmat dan Ridho Allah SWT, kami bermaksud menyelenggarakan pernikahan</p>
           </div>
           <div className="flex flex-col items-center gap-y-6">
-            <Image className="object-cover rounded-full w-48 h-48" src={GalleryPhoto} alt="" />
+            <Image className="object-cover w-48 h-72 rounded-t-full" src={GalleryPhoto} alt="" />
             <div>
               <span className="text-accent text-xl font-semibold">Akbar</span>
               <p className="text-accent text-sm">​Anak terakhir dari Bapak ..... dan Ibu .....</p>
             </div>
           </div>
           <div className="flex flex-col items-center gap-y-6">
-            <Image className="object-cover rounded-full w-48 h-48" src={GalleryPhoto} alt="" />
+            <Image className="object-cover w-48 h-72 rounded-t-full" src={GalleryPhoto} alt="" />
             <div>
               <span className="text-accent text-xl font-semibold">Syifa</span>
               <p className="text-accent text-sm">​Anak tunggal dari Bapak ..... dan Ibu .....</p>
@@ -97,59 +102,10 @@ export default async function Home() {
         <h1 className="font-great-vibes font-bold text-accent text-4xl tracking-wider">Our Gallery</h1>
         <div className="grid grid-cols-2 gap-4">
           {Array.from({ length: 8 }).map((_, idx) => (
-            <Image src={GalleryPhoto} className="object-cover rounded-md" alt="" key={idx} />
+            <BlurFade key={idx} delay={0.25 + idx * 0.05} inView>
+              <Image src={GalleryPhoto} className="object-cover rounded-md" alt="" />
+            </BlurFade>
           ))}
-        </div>
-      </section>
-      <section className="bg-accent w-full flex flex-col items-center text-center space-y-8 px-6 py-12">
-        <h1 className="font-great-vibes font-bold text-primary text-4xl">Titip Hadiah</h1>
-        <div className="flex flex-col gap-y-10 w-full">
-          <div className="bg-gradient-to-br from-primary to-secondary rounded-lg p-4 space-y-4 shadow-lg">
-            <div className="flex items-center justify-between">
-              <CreditCardChip />
-              <BCALogo />
-            </div>
-            <div className="flex flex-col items-start gap-y-2">
-              <span className="inline text-xs text-accent">Nomor Rekening</span>
-              <div className="flex gap-x-4 text-accent">
-                <p className="text-2xl font-bold">1234567890</p>
-                <CopyToClipboard content="1234567890" />
-              </div>
-            </div>
-            <div className="flex justify-between">
-              <div className="flex flex-col items-start">
-                <span className="inline text-xs text-accent">Atas Nama</span>
-                <p className="text-lg text-accent font-bold">Akbar</p>
-              </div>
-              <div className="flex flex-col items-center">
-                <span className="inline text-xs text-accent">Pernikahan</span>
-                <p className="text-lg text-accent font-bold">14/09/2024</p>
-              </div>
-            </div>
-          </div>
-          <div className="bg-gradient-to-br from-primary to-secondary rounded-lg p-4 space-y-4 shadow-lg">
-            <div className="flex items-center justify-between">
-              <CreditCardChip />
-              <BNILogo />
-            </div>
-            <div className="flex flex-col items-start gap-y-2">
-              <span className="inline text-xs text-accent">Nomor Rekening</span>
-              <div className="flex gap-x-4 text-accent">
-                <p className="text-2xl font-bold">0987654321</p>
-                <CopyToClipboard content="0987654321" />
-              </div>
-            </div>
-            <div className="flex justify-between">
-              <div className="flex flex-col items-start">
-                <span className="inline text-xs text-accent">Atas Nama</span>
-                <p className="text-lg text-accent font-bold">Syifa</p>
-              </div>
-              <div className="flex flex-col items-center">
-                <span className="inline text-xs text-accent">Pernikahan</span>
-                <p className="text-lg text-accent font-bold">14/09/2024</p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
       <RsvpForm />
@@ -161,7 +117,7 @@ export default async function Home() {
           ))}
         </div>
       </section>
-      <footer className="bg-gradient-to-b from-primary to-secondary w-full min-h-48 pt-12 grid place-content-center">
+      <footer className="bg-gradient-to-b from-primary to-secondary w-full min-h-48 pt-12 flex justify-center">
         <span className="text-accent">
           made by{" "}
           <a className="font-semibold" href="http://instagram.com/riyyan_firdaus" target="_blank" rel="noopener noreferrer">

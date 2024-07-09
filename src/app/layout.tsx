@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${josefinSans.className} ${greatVibes.variable} bg-accent`}>{children}</body>
+      <body className={`${josefinSans.className} ${greatVibes.variable} bg-gray-800`}>{children}</body>
     </html>
   );
 }
