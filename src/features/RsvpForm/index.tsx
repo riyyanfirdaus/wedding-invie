@@ -1,5 +1,6 @@
 "use client";
 
+import { SubmitBtn } from "@/components";
 import { useSearchParams } from "next/navigation";
 import { useRef } from "react";
 import { create } from "./action";
@@ -15,12 +16,12 @@ const RsvpForm = () => {
       await create(formData);
       formRef.current?.reset();
     } catch (error) {
-      throw new Error("error");
-    }
+      throw new Error("error create data");
+    } 
   };
 
   return (
-    <section className="bg-gradient-to-br from-primary to-secondary w-full px-6 py-12 space-y-8">
+    <section className="bg-gradient-to-br from-primary to-secondary w-full px-6 py-12 space-y-8 relative">
       <h1 className="font-great-vibes font-bold text-accent text-4xl text-center tracking-wider">RSVP</h1>
       <form className="space-y-4" action={createAction} ref={formRef}>
         <div>
@@ -69,7 +70,7 @@ const RsvpForm = () => {
             </div>
           </div>
         </div>
-        <button className="bg-accent rounded-lg text-primary px-4 py-2">Kirim</button>
+        <SubmitBtn />
       </form>
     </section>
   );
