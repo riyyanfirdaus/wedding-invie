@@ -31,18 +31,18 @@ const HeroCover = () => {
             <div className="relative flex justify-center w-80 h-80">
               <Image src={MainFlower} alt="Flower image" />
               <div className="absolute inset-y-1/4 flex flex-col items-center gap-y-4">
-                <div className="font-great-vibes font-bold text-4xl">
-                  <h1 className="drop-shadow-xl">Akbar</h1>
+                <div className="font-dancing-script font-bold text-2xl">
+                  <h1 className="drop-shadow-xl">Syifa Alfiah Fahrunnisa, M. Pd</h1>
                   <span className="drop-shadow-xl">&</span>
-                  <h1 className="drop-shadow-xl">Syifa</h1>
+                  <h1 className="drop-shadow-xl">Akbar, S.E</h1>
                 </div>
                 <span className="font-semibold text-xl drop-shadow-xl">14.09.2024</span>
               </div>
             </div>
           </div>
-          <div className="mt-12 mb-8 text-center text-primary">
+          <div className="mt-12 mb-8 text-center text-primary px-4">
             <span className="text-lg">Kepada</span>
-            <h2 className="font-semibold text-3xl drop-shadow-xl capitalize">{guest ? guest : "Guest"}</h2>
+            <h2 className="font-semibold text-xl drop-shadow-xl capitalize">{guest ? guest : "Guest"}</h2>
           </div>
           <button className="bg-accent text-primary flex items-center gap-x-2 font-medium rounded-md px-4 py-2 cursor-pointer" onClick={handleClose}>
             <Mail /> Buka Undangan

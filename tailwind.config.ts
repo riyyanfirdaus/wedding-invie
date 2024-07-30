@@ -15,7 +15,7 @@ const config: Config = {
       },
       fontFamily: {
         "josefin-sans": ["var(--font-josefin-sans)"],
-        "great-vibes": ["var(--font-great-vibes)"],
+        "dancing-script": ["var(--font-dancing-script)"],
       },
       animation: {
         flip: "flip 1s cubic-bezier(0, 0, 0.2, 1) infinite",

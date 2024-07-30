@@ -17,12 +17,12 @@ const RsvpForm = () => {
       formRef.current?.reset();
     } catch (error) {
       throw new Error("error create data");
-    } 
+    }
   };
 
   return (
     <section className="bg-gradient-to-br from-primary to-secondary w-full px-6 py-12 space-y-8 relative">
-      <h1 className="font-great-vibes font-bold text-accent text-4xl text-center tracking-wider">RSVP</h1>
+      <h1 className="font-dancing-script font-bold text-accent text-4xl text-center tracking-wider">RSVP</h1>
       <form className="space-y-4" action={createAction} ref={formRef}>
         <div>
           <label htmlFor="name" className="block text-base font-medium leading-6 text-accent">
