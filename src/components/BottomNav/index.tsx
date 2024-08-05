@@ -1,5 +1,5 @@
 "use client";
-import { AudioContext, AudioContextType } from "@/context/audioContext";
+import { AudioContext, AudioContextType } from "@/contexts/audioContext";
 import { CalendarClock, Heart, Images, Music, User } from "lucide-react";
 import { useContext, useEffect, useRef, useState } from "react";
 

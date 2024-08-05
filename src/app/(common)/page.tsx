@@ -1,12 +1,11 @@
-import BgMainImg from "@/assets/bg-main-img.webp";
 import GalleryPhoto from "@/assets/gallery-photo.webp";
 import { Marquee, Note, PhotoGallery, TimerCountdown } from "@/components";
+import { photoGallery } from "@/constants/gallery";
 import { RsvpForm } from "@/features";
 import { neon } from "@neondatabase/serverless";
 import { MapPin } from "lucide-react";
 import Image from "next/image";
 import "react-photo-view/dist/react-photo-view.css";
-
 async function getData() {
   const sql = neon(process.env.DATABASE_URL as string);
   const response = await sql`SELECT id, name, messages, presence FROM love_notes`;
@@ -19,8 +18,11 @@ export default async function Home() {
   return (
     <main className="flex w-full min-h-screen bg-primary flex-col items-center justify-between">
       <section className="relative min-h-screen w-full" id="main">
-        <Image src={BgMainImg} className="h-screen object-cover" alt="" />
-        <div className="absolute top-0 h-screen w-full flex flex-col items-center justify-center  overflow-x-auto md:top-10">
+        <div className="h-screen relative">
+          <Image src={photoGallery[1].photo} width={480} height={720} className="h-screen object-cover" alt="" />;
+          <span className="absolute inset-0 bg-gradient-to-t from-stone-500/90 to-stone-500/20" />
+        </div>
+        <div className="absolute top-0 h-screen w-full flex flex-col items-center justify-center  overflow-x-hidden md:top-10">
           <div className="text-center text-primary">
             <h2 className="text-xl mb-6">THE WEDDING OF</h2>
             <div className="relative flex justify-center">
@@ -35,10 +37,12 @@ export default async function Home() {
             </div>
           </div>
           <TimerCountdown />
-          <Marquee pauseOnHover className="[--duration:20s] mt-10">
-            {Array.from({ length: 4 }).map((_, i) => (
-              <Image src={GalleryPhoto} className="w-32 object-cover" key={i} alt="" />
-            ))}
+          <Marquee pauseOnHover className="[--gap:0.5rem] mt-10">
+            {photoGallery.map((gallery) => {
+              if (gallery.id <= 2 && gallery.id >= 6) return;
+
+              return <Image src={gallery.photo} width={480} height={720} className="w-20 object-cover" key={gallery.id} alt="" />;
+            })}
           </Marquee>
         </div>
       </section>
@@ -50,16 +54,16 @@ export default async function Home() {
             <p className="text-sm text-accent">Dengan memohon Rahmat dan Ridho Allah SWT, kami bermaksud menyelenggarakan pernikahan</p>
           </div>
           <div className="flex flex-col items-center gap-y-6">
-            <Image className="object-cover w-48 h-72 rounded-t-full" src={GalleryPhoto} alt="" />
+            <Image className="object-cover w-48 h-72 rounded-t-full" src={photoGallery[4].photo} width={480} height={720} alt="" />
             <div>
-              <span className="text-accent text-xl font-semibold">Syifa Alfiah Fahrunnisa, M. Pd</span>
+              <span className="font-dancing-script text-accent text-2xl font-semibold">Syifa Alfiah Fahrunnisa, M. Pd</span>
               <p className="text-accent text-sm">Putri tunggal Bapak Mohamad Nasir dan Almh Ibu Siti Nurhaeti Rahmah</p>
             </div>
           </div>
           <div className="flex flex-col items-center gap-y-6">
-            <Image className="object-cover w-48 h-72 rounded-t-full" src={GalleryPhoto} alt="" />
+            <Image className="object-cover w-48 h-72 rounded-t-full" src={photoGallery[7].photo} width={480} height={720} alt="" />
             <div>
-              <span className="text-accent text-xl font-semibold">Akbar, S.E</span>
+              <span className="font-dancing-script text-accent text-2xl font-semibold">Akbar, S.E</span>
               <p className="text-accent text-sm">Putra ketujuh Bapak H. Wahid Sutan Jamaris dan Almh Ibu Hj. Yusnimar Gasan</p>
             </div>
           </div>

@@ -1,12 +1,11 @@
 "use client";
 
-import { AudioContext, AudioContextType } from "@/context/audioContext";
-import { useContext, useState } from "react";
-import BgMainImg from "@/assets/bg-main-img.webp";
-import MainFlower from "@/assets/main-flower.png";
-import Image from "next/image";
+import { photoGallery } from "@/constants/gallery";
+import { AudioContext, AudioContextType } from "@/contexts/audioContext";
 import { Mail } from "lucide-react";
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
+import { useContext, useState } from "react";
 
 const HeroCover = () => {
   const { handlePlaying } = useContext(AudioContext) as AudioContextType;
@@ -24,20 +23,20 @@ const HeroCover = () => {
   return (
     <div className={`fixed z-30 min-h-screen max-w-[480px] w-full bg-primary ${isOpened}`}>
       <div className="relative min-h-screen w-full">
-        <Image src={BgMainImg} className="h-screen object-cover" alt="" />
+        <div className="h-screen relative">
+          <Image src={photoGallery[1].photo} width={480} height={720} className="h-screen object-cover" alt="" />;
+          <span className="absolute inset-0 bg-gradient-to-t from-stone-500/90 to-stone-500/20" />
+        </div>
         <div className="absolute bottom-0 h-screen w-full flex flex-col items-center justify-center">
-          <div className="text-center text-primary">
+          <div className="text-center text-primary space-y-12">
             <h2 className="text-xl font-medium drop-shadow-xl">THE WEDDING OF</h2>
-            <div className="relative flex justify-center w-80 h-80">
-              <Image src={MainFlower} alt="Flower image" />
-              <div className="absolute inset-y-1/4 flex flex-col items-center gap-y-4">
-                <div className="font-dancing-script font-bold text-2xl">
-                  <h1 className="drop-shadow-xl">Syifa Alfiah Fahrunnisa, M. Pd</h1>
-                  <span className="drop-shadow-xl">&</span>
-                  <h1 className="drop-shadow-xl">Akbar, S.E</h1>
-                </div>
-                <span className="font-semibold text-xl drop-shadow-xl">14.09.2024</span>
+            <div className="flex flex-col items-center gap-y-4">
+              <div className="font-dancing-script font-bold text-2xl">
+                <h1 className="drop-shadow-xl">Syifa Alfiah Fahrunnisa, M. Pd</h1>
+                <span className="drop-shadow-xl">&</span>
+                <h1 className="drop-shadow-xl">Akbar, S.E</h1>
               </div>
+              <span className="font-semibold text-xl drop-shadow-xl">14.09.2024</span>
             </div>
           </div>
           <div className="mt-12 mb-8 text-center text-primary px-4">
