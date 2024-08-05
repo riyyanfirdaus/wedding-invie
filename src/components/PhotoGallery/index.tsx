@@ -1,15 +1,18 @@
 "use client";
 
+import { LineBorderDown } from "@/assets/Icon";
+import { photoGallery } from "@/constants/gallery";
 import Image from "next/image";
-import GalleryPhoto from "@/assets/gallery-photo.webp";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import BlurFade from "../BlurFade";
-import { photoGallery } from "@/constants/gallery";
 
 const PhotoGallery = () => {
   return (
     <section className="bg-gradient-to-br from-primary to-secondary w-full flex flex-col items-center text-center space-y-8 px-6 py-12" id="our-gallery">
-      <h1 className="font-dancing-script font-bold text-accent text-4xl tracking-wider">Our Gallery</h1>
+      <div className="flex flex-col items-center gap-1">
+        <h1 className="font-dancing-script font-bold text-accent text-4xl tracking-wider">Our Gallery</h1>
+        <LineBorderDown className="text-accent w-40" />
+      </div>
       <PhotoProvider>
         <div className="grid grid-cols-2 gap-4">
           {photoGallery.map((gallery) => (

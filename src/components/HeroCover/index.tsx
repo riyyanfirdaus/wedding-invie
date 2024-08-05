@@ -1,5 +1,6 @@
 "use client";
 
+import { LineBorderDown, LineBorderUp } from "@/assets/Icon";
 import { photoGallery } from "@/constants/gallery";
 import { AudioContext, AudioContextType } from "@/contexts/audioContext";
 import { Mail } from "lucide-react";
@@ -25,18 +26,22 @@ const HeroCover = () => {
       <div className="relative min-h-screen w-full">
         <div className="h-screen relative">
           <Image src={photoGallery[1].photo} width={480} height={720} className="h-screen object-cover" alt="" />;
-          <span className="absolute inset-0 bg-gradient-to-t from-stone-500/90 to-stone-500/20" />
+          <span className="absolute inset-0 bg-gradient-to-t from-neutral-600/90 to-neutral-600/20" />
         </div>
         <div className="absolute bottom-0 h-screen w-full flex flex-col items-center justify-center">
           <div className="text-center text-primary space-y-12">
             <h2 className="text-xl font-medium drop-shadow-xl">THE WEDDING OF</h2>
-            <div className="flex flex-col items-center gap-y-4">
-              <div className="font-dancing-script font-bold text-2xl">
-                <h1 className="drop-shadow-xl">Syifa Alfiah Fahrunnisa, M. Pd</h1>
-                <span className="drop-shadow-xl">&</span>
-                <h1 className="drop-shadow-xl">Akbar, S.E</h1>
+            <div className="space-y-4">
+              <LineBorderUp className="text-primary" />
+              <div className="flex flex-col items-center gap-y-4">
+                <div className="font-dancing-script font-bold text-2xl">
+                  <h1 className="drop-shadow-xl tracking-wide">Syifa Alfiah Fahrunnisa, M. Pd</h1>
+                  <span className="drop-shadow-xl">&</span>
+                  <h1 className="drop-shadow-xl tracking-wide">Akbar, S.E</h1>
+                </div>
+                <span className="font-semibold text-xl drop-shadow-xl">14.09.2024</span>
               </div>
-              <span className="font-semibold text-xl drop-shadow-xl">14.09.2024</span>
+              <LineBorderDown className="text-primary" />
             </div>
           </div>
           <div className="mt-12 mb-8 text-center text-primary px-4">

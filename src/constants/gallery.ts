@@ -21,7 +21,7 @@ export const photoGallery = [
   },
   {
     id: 6,
-    photo: "https://res.cloudinary.com/devyan/image/upload/f_auto,q_auto/v1/Syifa%20Akbar%20Wedding/sqmxrskpjwzgtmq8kiao",
+    photo: "https://res.cloudinary.com/devyan/image/upload/f_auto,q_auto/v1/Syifa%20Akbar%20Wedding/zslygzuveaznsdp98jfq",
   },
   {
     id: 7,
@@ -29,6 +29,6 @@ export const photoGallery = [
   },
   {
     id: 8,
-    photo: "https://res.cloudinary.com/devyan/image/upload/f_auto,q_auto/v1/Syifa%20Akbar%20Wedding/zslygzuveaznsdp98jfq",
+    photo: "https://res.cloudinary.com/devyan/image/upload/f_auto,q_auto/v1/Syifa%20Akbar%20Wedding/sqmxrskpjwzgtmq8kiao",
   },
 ];

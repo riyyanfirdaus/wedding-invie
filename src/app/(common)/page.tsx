@@ -1,4 +1,4 @@
-import GalleryPhoto from "@/assets/gallery-photo.webp";
+import { LineBorderDown } from "@/assets/Icon";
 import { Marquee, Note, PhotoGallery, TimerCountdown } from "@/components";
 import { photoGallery } from "@/constants/gallery";
 import { RsvpForm } from "@/features";
@@ -20,7 +20,7 @@ export default async function Home() {
       <section className="relative min-h-screen w-full" id="main">
         <div className="h-screen relative">
           <Image src={photoGallery[1].photo} width={480} height={720} className="h-screen object-cover" alt="" />;
-          <span className="absolute inset-0 bg-gradient-to-t from-stone-500/90 to-stone-500/20" />
+          <span className="absolute inset-0 bg-gradient-to-t from-neutral-600/90 to-neutral-600/20" />
         </div>
         <div className="absolute top-0 h-screen w-full flex flex-col items-center justify-center  overflow-x-hidden md:top-10">
           <div className="text-center text-primary">
@@ -28,18 +28,18 @@ export default async function Home() {
             <div className="relative flex justify-center">
               <div className="flex flex-col items-center gap-y-4">
                 <div className="flex flex-col gap-y-3 font-dancing-script font-bold text-2xl">
-                  <h1>Syifa Alfiah Fahrunnisa, M. Pd</h1>
+                  <h1 className="tracking-wide">Syifa Alfiah Fahrunnisa, M. Pd</h1>
                   <span>&</span>
-                  <h1>Akbar, S.E</h1>
+                  <h1 className="tracking-wide">Akbar, S.E</h1>
                 </div>
                 <span className="font-semibold text-xl">14.09.2024</span>
               </div>
             </div>
           </div>
           <TimerCountdown />
-          <Marquee pauseOnHover className="[--gap:0.5rem] mt-10">
-            {photoGallery.map((gallery) => {
-              if (gallery.id <= 2 && gallery.id >= 6) return;
+          <Marquee pauseOnHover className="[--gap:0.5rem] [--duration:15s] mt-16">
+            {photoGallery.map((gallery, idx) => {
+              if (idx >= 4) return;
 
               return <Image src={gallery.photo} width={480} height={720} className="w-20 object-cover" key={gallery.id} alt="" />;
             })}
@@ -47,7 +47,10 @@ export default async function Home() {
         </div>
       </section>
       <section className="bg-gradient-to-br from-primary to-secondary w-full flex flex-col items-center text-center space-y-8 px-6 py-12" id="bride-and-groom">
-        <h1 className="font-dancing-script font-bold text-accent text-4xl tracking-wider">Bride & Groom</h1>
+        <div className="flex flex-col items-center gap-1">
+          <h1 className="font-dancing-script font-bold text-accent text-4xl tracking-wider">Bride & Groom</h1>
+          <LineBorderDown className="text-accent w-40" />
+        </div>
         <div className="space-y-20">
           <div className="text-center space-y-4">
             <p className="text-sm text-accent font-semibold">Assalamualaikum Warahmatullahi Wabarakaatuh</p>
@@ -55,22 +58,29 @@ export default async function Home() {
           </div>
           <div className="flex flex-col items-center gap-y-6">
             <Image className="object-cover w-48 h-72 rounded-t-full" src={photoGallery[4].photo} width={480} height={720} alt="" />
-            <div>
-              <span className="font-dancing-script text-accent text-2xl font-semibold">Syifa Alfiah Fahrunnisa, M. Pd</span>
-              <p className="text-accent text-sm">Putri tunggal Bapak Mohamad Nasir dan Almh Ibu Siti Nurhaeti Rahmah</p>
+            <div className="space-y-2">
+              <span className="font-dancing-script text-accent text-2xl font-semibold tracking-wide">Syifa Alfiah Fahrunnisa, M. Pd</span>
+              <p className="text-accent text-sm">
+                Putri tunggal Bapak Mohamad Nasir <br /> dan Almh Ibu Siti Nurhaeti Rahmah
+              </p>
             </div>
           </div>
           <div className="flex flex-col items-center gap-y-6">
-            <Image className="object-cover w-48 h-72 rounded-t-full" src={photoGallery[7].photo} width={480} height={720} alt="" />
-            <div>
-              <span className="font-dancing-script text-accent text-2xl font-semibold">Akbar, S.E</span>
-              <p className="text-accent text-sm">Putra ketujuh Bapak H. Wahid Sutan Jamaris dan Almh Ibu Hj. Yusnimar Gasan</p>
+            <Image className="object-cover w-48 h-72 rounded-t-full" src={photoGallery[5].photo} width={480} height={720} alt="" />
+            <div className="space-y-2">
+              <span className="font-dancing-script text-accent text-2xl font-semibold tracking-wide">Akbar, S.E</span>
+              <p className="text-accent text-sm">
+                Putra ketujuh Bapak H. Wahid Sutan Jamaris <br /> dan Almh Ibu Hj. Yusnimar Gasan
+              </p>
             </div>
           </div>
         </div>
       </section>
       <section className="bg-accent w-full flex flex-col items-center text-center space-y-8 px-6 py-12" id="save-the-date">
-        <h1 className="font-dancing-script font-bold text-primary text-4xl tracking-wider">Save The Date</h1>
+        <div className="flex flex-col items-center gap-1">
+          <h1 className="font-dancing-script font-bold text-primary text-4xl tracking-wider">Save The Date</h1>
+          <LineBorderDown className="text-primary w-40" />
+        </div>
         <div className="text-primary space-y-4 mt-4">
           <p>وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةًۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ</p>
           <p className="text-xs">
@@ -105,7 +115,10 @@ export default async function Home() {
       <PhotoGallery />
       <RsvpForm />
       <section className="bg-accent w-full flex flex-col items-center space-y-8 px-6 py-12">
-        <h1 className="font-dancing-script font-bold text-primary text-4xl tracking-wider">Love Notes</h1>
+        <div className="flex flex-col items-center gap-1">
+          <h1 className="font-dancing-script font-bold text-primary text-4xl tracking-wider">Love Notes</h1>
+          <LineBorderDown className="text-primary w-40" />
+        </div>
         <div className="bg-primary w-full h-[420px] overflow-y-auto flex flex-col gap-y-4 rounded-lg shadow-xl p-3">
           {data.map((item) => (
             <Note key={item.id} data={item} />
