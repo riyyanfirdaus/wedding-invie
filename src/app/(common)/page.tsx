@@ -19,7 +19,7 @@ export default async function Home() {
     <main className="flex w-full min-h-screen bg-primary flex-col items-center justify-between">
       <section className="relative min-h-screen w-full" id="main">
         <div className="h-screen relative">
-          <Image src={photoGallery[1].photo} width={480} height={720} className="h-screen object-cover" alt="" />;
+          <Image src={photoGallery[1].photo} width={480} height={720} className="h-screen object-cover" alt="" />
           <span className="absolute inset-0 bg-gradient-to-t from-neutral-600/90 to-neutral-600/20" />
         </div>
         <div className="absolute top-0 h-screen w-full flex flex-col items-center justify-center  overflow-x-hidden md:top-10">
