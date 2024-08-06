@@ -1,15 +1,16 @@
 "use client";
 
-import { useMemo } from "react";
-import { ForwardRefComponent, HTMLMotionProps, motion, Variants } from "framer-motion";
+import { ForwardRefComponent, HTMLMotionProps, motion, useInView, Variants } from "framer-motion";
+import { useMemo, useRef } from "react";
 
 type FadeProps = {
   className?: string;
   direction?: "up" | "down" | "left" | "right";
   framerProps?: Variants;
   children: React.ReactNode;
-  as?: string;
-  onClick?: () => void
+  as?: "span" | "h1" | "p" | "button";
+  repeat?: boolean;
+  onClick?: () => void;
 };
 
 type TagType =
@@ -18,28 +19,29 @@ type TagType =
   | ForwardRefComponent<HTMLParagraphElement, HTMLMotionProps<"p">>
   | ForwardRefComponent<HTMLButtonElement, HTMLMotionProps<"button">>;
 
-const Fade = (
-  {
-    direction = "up",
-    className,
-    children,
-    framerProps = {
-      hidden: { opacity: 0 },
-      show: { opacity: 1, transition: { type: "spring" } },
-    },
-    as = "h1",
-    onClick
-  }: FadeProps,
-  
-) => {
+const Fade = ({
+  direction = "up",
+  className,
+  children,
+  framerProps = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { type: "spring" } },
+  },
+  as = "h1",
+  repeat = false,
+  onClick,
+}: FadeProps) => {
   const directionOffset = useMemo(() => {
     const map = { up: 10, down: -10, left: -10, right: 10 };
     return map[direction];
   }, [direction]);
 
+  const fadeRef = useRef(null);
+  const isInView = useInView(fadeRef, { once: repeat });
+
   const axis = direction === "up" || direction === "down" ? "y" : "x";
 
-  const Tag: TagType = as === "span" ? motion.span : as === "h1" ? motion.h1 : as === "p" ? motion.p : motion.button;
+  const Tag: TagType = as === "span" ? motion.span : as === "h1" ? motion.h1 : as === "p" ? motion.p : as === "button" ? motion.button : motion.div;
 
   const FADE_ANIMATION_VARIANTS = useMemo(() => {
     const { hidden, show, ...rest } = framerProps as {
@@ -62,7 +64,7 @@ const Fade = (
   }, [directionOffset, axis, framerProps]);
 
   return (
-    <motion.div initial="hidden" animate="show" viewport={{ once: true }} variants={FADE_ANIMATION_VARIANTS}>
+    <motion.div ref={fadeRef} initial="hidden" animate={isInView ? "show" : "hidden"} variants={FADE_ANIMATION_VARIANTS}>
       <Tag className={className} onClick={onClick}>
         {children}
       </Tag>
