@@ -7,6 +7,8 @@ import { Mail } from "lucide-react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useContext, useState } from "react";
+import TextBlurIn from "../TextBlurIn";
+import Fade from "../Fade";
 
 const HeroCover = () => {
   const { handlePlaying } = useContext(AudioContext) as AudioContextType;
@@ -30,27 +32,59 @@ const HeroCover = () => {
         </div>
         <div className="absolute bottom-0 h-screen w-full flex flex-col items-center justify-center">
           <div className="text-center text-primary space-y-12">
-            <h2 className="text-xl font-medium drop-shadow-xl">THE WEDDING OF</h2>
+            <Fade
+              className="text-xl font-medium drop-shadow-xl"
+              direction="down"
+              framerProps={{
+                show: { transition: { delay: 0.2 } },
+              }}
+            >
+              THE WEDDING OF
+            </Fade>
             <div className="space-y-4">
               <LineBorderUp className="text-primary" />
               <div className="flex flex-col items-center gap-y-4">
                 <div className="font-dancing-script font-bold text-2xl">
-                  <h1 className="drop-shadow-xl tracking-wide">Syifa Alfiah Fahrunnisa, M. Pd</h1>
-                  <span className="drop-shadow-xl">&</span>
-                  <h1 className="drop-shadow-xl tracking-wide">Akbar, S.E</h1>
+                  <TextBlurIn as="h1" word="Syifa Alfiah Fahrunnisa, M. Pd" className="drop-shadow-xl tracking-wide" />
+                  <TextBlurIn as="span" word="&" className="drop-shadow-xl" />
+                  <TextBlurIn as="h1" word="Akbar, S.E" className="drop-shadow-xl tracking-wide" />
                 </div>
-                <span className="font-semibold text-xl drop-shadow-xl">14.09.2024</span>
+                <TextBlurIn as="span" word="14.09.2024" className="font-semibold text-xl drop-shadow-xl" />
               </div>
               <LineBorderDown className="text-primary" />
             </div>
           </div>
           <div className="mt-12 mb-8 text-center text-primary px-4">
-            <span className="text-lg">Kepada</span>
-            <h2 className="font-semibold text-xl drop-shadow-xl capitalize">{guest ? guest : "Guest"}</h2>
+            <Fade
+              className="text-lg"
+              direction="up"
+              framerProps={{
+                show: { transition: { delay: 0.4 } },
+              }}
+            >
+              Kepada
+            </Fade>
+            <Fade
+              className="font-semibold text-xl drop-shadow-xl capitalize"
+              direction="up"
+              framerProps={{
+                show: { transition: { delay: 0.6 } },
+              }}
+            >
+              {guest ? guest : "Guest"}
+            </Fade>
           </div>
-          <button className="bg-accent text-primary flex items-center gap-x-2 font-medium rounded-md px-4 py-2 cursor-pointer" onClick={handleClose}>
+          <Fade
+            as="button"
+            className="bg-accent text-primary flex items-center gap-x-2 font-medium rounded-md px-4 py-2 cursor-pointer"
+            direction="up"
+            framerProps={{
+              show: { transition: { delay: 0.8 } },
+            }}
+            onClick={handleClose}
+          >
             <Mail /> Buka Undangan
-          </button>
+          </Fade>
         </div>
       </div>
     </div>
