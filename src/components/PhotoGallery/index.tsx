@@ -5,12 +5,21 @@ import { photoGallery } from "@/constants/gallery";
 import Image from "next/image";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import BlurFade from "../BlurFade";
-
+import Fade from "../Fade";
 const PhotoGallery = () => {
   return (
     <section className="bg-gradient-to-br from-primary to-secondary w-full flex flex-col items-center text-center space-y-8 px-6 py-12" id="our-gallery">
       <div className="flex flex-col items-center gap-1">
-        <h1 className="font-dancing-script font-bold text-accent text-4xl tracking-wider">Our Gallery</h1>
+        <Fade
+          as="h1"
+          className="font-dancing-script font-bold text-accent text-4xl tracking-wider"
+          direction="down"
+          framerProps={{
+            show: { transition: { delay: 0.3 } },
+          }}
+        >
+          Our Gallery
+        </Fade>
         <LineBorderDown className="text-accent w-40" />
       </div>
       <PhotoProvider>

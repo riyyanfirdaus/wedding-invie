@@ -1,7 +1,7 @@
 "use client";
 
 import { LineBorderDown } from "@/assets/Icon";
-import { SubmitBtn } from "@/components";
+import { Fade, SubmitBtn } from "@/components";
 import { useSearchParams } from "next/navigation";
 import { useRef } from "react";
 import { create } from "./action";
@@ -24,7 +24,16 @@ const RsvpForm = () => {
   return (
     <section className="bg-gradient-to-br from-primary to-secondary w-full px-6 py-12 space-y-8 relative">
       <div className="flex flex-col items-center gap-1">
-        <h1 className="font-dancing-script font-bold text-accent text-4xl text-center tracking-wider">RSVP</h1>
+        <Fade
+          as="h1"
+          className="font-dancing-script font-bold text-accent text-4xl text-center tracking-wider"
+          direction="down"
+          framerProps={{
+            show: { transition: { delay: 0.3 } },
+          }}
+        >
+          RSVP
+        </Fade>
         <LineBorderDown className="text-accent w-40" />
       </div>
       <form className="space-y-4" action={createAction} ref={formRef}>
