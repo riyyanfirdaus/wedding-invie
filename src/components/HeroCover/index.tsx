@@ -30,8 +30,8 @@ const HeroCover = () => {
           <Image src={photoGallery[10].photo} width={480} height={720} className="h-screen object-cover" alt="" />;
           <span className="absolute inset-0 bg-gradient-to-t from-neutral-600/90 to-neutral-600/20" />
         </div>
-        <div className="absolute bottom-0 h-screen w-full flex flex-col items-center justify-center">
-          <div className="text-center text-primary space-y-12">
+        <div className="absolute bottom-0 h-screen w-full flex flex-col items-center justify-around">
+          <div className="text-center text-primary space-y-6">
             <Fade
               className="text-xl font-medium drop-shadow-xl"
               direction="down"
@@ -45,46 +45,46 @@ const HeroCover = () => {
               <LineBorderUp className="text-primary" />
               <div className="flex flex-col items-center gap-y-4">
                 <div className="font-dancing-script font-bold text-2xl">
-                  <TextBlurIn as="h1" word="Akbar, S.E" className="drop-shadow-xl tracking-wide" />
-                  <TextBlurIn as="span" word="&" className="drop-shadow-xl" />
-                  <TextBlurIn as="h1" word="Syifa Alfiah Fahrunnisa, M. Pd" className="drop-shadow-xl tracking-wide" />
+                  <TextBlurIn as="h1" word="Akbar & Syifa" className="text-4xl drop-shadow-xl" />
                 </div>
                 <TextBlurIn as="span" word="14.09.2024" className="font-semibold text-xl drop-shadow-xl" />
               </div>
               <LineBorderDown className="text-primary" />
             </div>
           </div>
-          <div className="mt-12 mb-8 text-center text-primary px-4">
+          <div>
+            <div className="mt-12 mb-8 text-center text-primary px-4">
+              <Fade
+                className="text-lg"
+                direction="up"
+                framerProps={{
+                  show: { transition: { delay: 0.4 } },
+                }}
+              >
+                Kepada
+              </Fade>
+              <Fade
+                className="font-semibold text-xl drop-shadow-xl capitalize"
+                direction="up"
+                framerProps={{
+                  show: { transition: { delay: 0.6 } },
+                }}
+              >
+                {guest ? guest : "Guest"}
+              </Fade>
+            </div>
             <Fade
-              className="text-lg"
+              as="button"
+              className="bg-accent text-primary flex items-center gap-x-2 font-medium rounded-md px-4 py-2 cursor-pointer"
               direction="up"
               framerProps={{
-                show: { transition: { delay: 0.4 } },
+                show: { transition: { delay: 0.8 } },
               }}
+              onClick={handleClose}
             >
-              Kepada
-            </Fade>
-            <Fade
-              className="font-semibold text-xl drop-shadow-xl capitalize"
-              direction="up"
-              framerProps={{
-                show: { transition: { delay: 0.6 } },
-              }}
-            >
-              {guest ? guest : "Guest"}
+              <Mail /> Buka Undangan
             </Fade>
           </div>
-          <Fade
-            as="button"
-            className="bg-accent text-primary flex items-center gap-x-2 font-medium rounded-md px-4 py-2 cursor-pointer"
-            direction="up"
-            framerProps={{
-              show: { transition: { delay: 0.8 } },
-            }}
-            onClick={handleClose}
-          >
-            <Mail /> Buka Undangan
-          </Fade>
         </div>
       </div>
     </div>
