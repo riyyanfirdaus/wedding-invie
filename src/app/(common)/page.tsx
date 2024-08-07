@@ -1,4 +1,4 @@
-import { LineBorderDown } from "@/assets/Icon";
+import { DividerLove, LineBorderDown } from "@/assets/Icon";
 import { Fade, Marquee, Note, PhotoGallery, TextBlurIn, TimerCountdown } from "@/components";
 import { photoGallery } from "@/constants/gallery";
 import { RsvpForm } from "@/features";
@@ -6,6 +6,7 @@ import { neon } from "@neondatabase/serverless";
 import { MapPin } from "lucide-react";
 import Image from "next/image";
 import "react-photo-view/dist/react-photo-view.css";
+
 async function getData() {
   const sql = neon(process.env.DATABASE_URL as string);
   const response = await sql`SELECT id, name, messages, presence FROM love_notes`;
@@ -37,9 +38,9 @@ export default async function Home() {
             <div className="relative flex justify-center">
               <div className="flex flex-col items-center gap-y-4">
                 <div className="flex flex-col gap-y-3 font-dancing-script font-bold text-2xl">
-                  <TextBlurIn as="h1" className="tracking-wide" word="Syifa Alfiah Fahrunnisa, M. Pd" />
-                  <TextBlurIn as="span" word="&" />
                   <TextBlurIn as="h1" className="tracking-wide" word="Akbar, S.E" />
+                  <TextBlurIn as="span" word="&" />
+                  <TextBlurIn as="h1" className="tracking-wide" word="Syifa Alfiah Fahrunnisa, M. Pd" />
                 </div>
                 <TextBlurIn as="span" className="font-semibold text-xl" word="14.09.2024" />
               </div>
@@ -56,18 +57,6 @@ export default async function Home() {
         </div>
       </section>
       <section className="bg-gradient-to-br from-primary to-secondary w-full flex flex-col items-center text-center space-y-8 px-6 py-12" id="bride-and-groom">
-        <div className="flex flex-col items-center gap-1">
-          <Fade
-            className="font-dancing-script font-bold text-accent text-4xl tracking-wider"
-            direction="down"
-            framerProps={{
-              show: { transition: { delay: 0.3 } },
-            }}
-          >
-            Bride & Groom
-          </Fade>
-          <LineBorderDown className="text-accent w-40" />
-        </div>
         <div className="space-y-20">
           <div className="text-center space-y-4">
             <Fade
@@ -92,31 +81,15 @@ export default async function Home() {
             </Fade>
           </div>
           <div className="flex flex-col items-center gap-y-6">
-            <Image className="object-cover w-48 h-72 rounded-t-full" src={photoGallery[4].photo} width={480} height={720} alt="" />
-            <div className="space-y-2">
-              <Fade
-                as="p"
-                className="font-dancing-script text-accent text-2xl font-semibold tracking-wide"
-                direction="down"
-                framerProps={{
-                  show: { transition: { delay: 0.4 } },
-                }}
-              >
-                Syifa Alfiah Fahrunnisa, M. Pd
-              </Fade>
-              <Fade
-                as="p"
-                className="text-accent text-sm"
-                direction="up"
-                framerProps={{
-                  show: { transition: { delay: 0.4 } },
-                }}
-              >
-                Putri tunggal Bapak Mohamad Nasir <br /> dan Almh Ibu Siti Nurhaeti Rahmah
-              </Fade>
-            </div>
-          </div>
-          <div className="flex flex-col items-center gap-y-6">
+            <Fade
+              className="font-dancing-script font-bold text-accent text-4xl tracking-wider"
+              direction="down"
+              framerProps={{
+                show: { transition: { delay: 0.3 } },
+              }}
+            >
+              Groom
+            </Fade>
             <Image className="object-cover w-48 h-72 rounded-t-full" src={photoGallery[5].photo} width={480} height={720} alt="" />
             <div className="space-y-2">
               <Fade
@@ -138,6 +111,41 @@ export default async function Home() {
                 }}
               >
                 Putra ketujuh Bapak H. Wahid Sutan Jamaris <br /> dan Almh Ibu Hj. Yusnimar Gasan
+              </Fade>
+            </div>
+          </div>
+          <DividerLove className="w-44 text-accent mx-auto" />
+          <div className="flex flex-col items-center gap-y-6">
+            <Fade
+              className="font-dancing-script font-bold text-accent text-4xl tracking-wider"
+              direction="down"
+              framerProps={{
+                show: { transition: { delay: 0.3 } },
+              }}
+            >
+              Bride
+            </Fade>
+            <Image className="object-cover w-48 h-72 rounded-t-full" src={photoGallery[4].photo} width={480} height={720} alt="" />
+            <div className="space-y-2">
+              <Fade
+                as="p"
+                className="font-dancing-script text-accent text-2xl font-semibold tracking-wide"
+                direction="down"
+                framerProps={{
+                  show: { transition: { delay: 0.4 } },
+                }}
+              >
+                Syifa Alfiah Fahrunnisa, M. Pd
+              </Fade>
+              <Fade
+                as="p"
+                className="text-accent text-sm"
+                direction="up"
+                framerProps={{
+                  show: { transition: { delay: 0.4 } },
+                }}
+              >
+                Putri tunggal Bapak Mohamad Nasir <br /> dan Almh Ibu Siti Nurhaeti Rahmah
               </Fade>
             </div>
           </div>
@@ -186,29 +194,37 @@ export default async function Home() {
               show: { transition: { delay: 0.4 } },
             }}
           >
-            Surah Ar-Rum Ayat 21
+            Surah Ar`-`Rum Ayat 21
           </Fade>
         </div>
-        <div className="bg-gradient-to-b from-primary to-secondary rounded-tl-3xl rounded-tr-3xl space-y-20 px-4 py-8">
-          <div className="text-accent flex flex-col items-center gap-y-2">
-            <h2 className="font-bold text-xl">Akad</h2>
-            <p>Sabtu, 14 September 2024</p>
-            <p>09:00-11:00 WIB</p>
-            <p>Gedung Catur</p>
-            <p>Citerep, Kec. Ciruas, Kabupaten Serang, Banten</p>
-            <a className="flex items-center gap-x-2 bg-accent text-primary rounded-md px-4 py-2 mt-2" href={"https://maps.app.goo.gl/cTeHbXbPJjnzzMAx6"} target="_blank">
-              <MapPin /> Lihat Peta
-            </a>
+        <div className="relative">
+          <Image src={photoGallery[3].photo} width={360} height={680} className="rounded-lg object-cover h-96" alt="" />
+          <div className="absolute top-0 h-full grid place-items-center bg-gradient-to-t from-accent/80 to-accent/20 rounded-lg">
+            <div className="flex flex-col items-center text-primary">
+              <h2 className="font-bold text-xl drop-shadow-lg">Akad</h2>
+              <p className="drop-shadow-lg">Sabtu, 14 September 2024</p>
+              <p className="drop-shadow-lg">09:00-11:00 WIB</p>
+              <p className="drop-shadow-lg">Gedung Catur</p>
+              <p className="drop-shadow-lg">Citerep, Kec. Ciruas, Kabupaten Serang, Banten</p>
+              <a className="flex items-center gap-x-2 bg-primary text-accent rounded-md px-4 py-2 mt-2" href={"https://maps.app.goo.gl/cTeHbXbPJjnzzMAx6"} target="_blank">
+                <MapPin /> Lihat Peta
+              </a>
+            </div>
           </div>
-          <div className="text-accent flex flex-col items-center gap-y-2">
-            <h2 className="font-bold text-xl">Resepsi</h2>
-            <p>Sabtu, 14 September 2024</p>
-            <p>12:30-11:00 WIB</p>
-            <p>Gedung Catur</p>
-            <p>Citerep, Kec. Ciruas, Kabupaten Serang, Banten</p>
-            <a className="flex items-center gap-x-2 bg-accent text-primary rounded-md px-4 py-2 mt-2" href={"https://maps.app.goo.gl/cTeHbXbPJjnzzMAx6"} target="_blank">
-              <MapPin /> Lihat Peta
-            </a>
+        </div>
+        <div className="relative">
+          <Image src={photoGallery[6].photo} width={360} height={680} className="rounded-lg object-cover h-96 " alt="" />
+          <div className="absolute top-0 h-full grid place-items-center bg-gradient-to-t from-accent/80 to-accent/20 rounded-lg">
+            <div className="flex flex-col items-center text-primary">
+              <h2 className="font-bold text-xl drop-shadow-lg">Resepsi</h2>
+              <p className="drop-shadow-lg">Sabtu, 14 September 2024</p>
+              <p className="drop-shadow-lg">12:00-15:00 WIB</p>
+              <p className="drop-shadow-lg">Gedung Catur</p>
+              <p className="drop-shadow-lg">Citerep, Kec. Ciruas, Kabupaten Serang, Banten</p>
+              <a className="w-fit flex items-center gap-x-2 bg-primary text-accent rounded-md px-4 py-2 mt-2" href={"https://maps.app.goo.gl/cTeHbXbPJjnzzMAx6"} target="_blank">
+                <MapPin /> Lihat Peta
+              </a>
+            </div>
           </div>
         </div>
       </section>

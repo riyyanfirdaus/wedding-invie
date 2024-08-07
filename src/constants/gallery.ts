@@ -29,6 +29,19 @@ export const photoGallery = [
   },
   {
     id: 8,
+    photo: "https://res.cloudinary.com/devyan/image/upload/v1722934436/Syifa%20Akbar%20Wedding/DSCF5549-2_copy_2_b3gpwx.jpg",
+  },
+  {
+    id: 9,
     photo: "https://res.cloudinary.com/devyan/image/upload/f_auto,q_auto/v1/Syifa%20Akbar%20Wedding/sqmxrskpjwzgtmq8kiao",
+  },
+  { id: 10, photo: "https://res.cloudinary.com/devyan/image/upload/v1722934436/Syifa%20Akbar%20Wedding/DSCF5549-2_copy_2_b3gpwx.jpg" },
+  {
+    id: 11,
+    photo: "https://res.cloudinary.com/devyan/image/upload/v1722934435/Syifa%20Akbar%20Wedding/photo_6336632953261637229_y_onympl.jpg",
+  },
+  {
+    id: 12,
+    photo: "https://res.cloudinary.com/devyan/image/upload/v1722934436/Syifa%20Akbar%20Wedding/DSCF5508-2_copy_tl0vje.jpg",
   },
 ];
