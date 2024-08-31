@@ -1,11 +1,10 @@
-import { DividerLove, LineBorderDown } from "@/assets/Icon";
+import { LineBorderDown } from "@/assets/Icon";
 import { Fade, Marquee, Note, NumberTicker, PhotoGallery, TextBlurIn, TimerCountdown } from "@/components";
 import { photoGallery } from "@/constants/gallery";
 import { RsvpForm } from "@/features";
 import { neon } from "@neondatabase/serverless";
 import { MapPin } from "lucide-react";
 import Image from "next/image";
-import "react-photo-view/dist/react-photo-view.css";
 
 async function getData() {
   const sql = neon(process.env.DATABASE_URL as string);
@@ -23,19 +22,21 @@ export default async function Home() {
           <Image src={photoGallery[1].photo} width={480} height={720} className="h-screen object-cover" alt="" />
           <span className="absolute inset-0 bg-gradient-to-t from-neutral-600/90 to-neutral-600/20" />
         </div>
-        <div className="absolute top-0 h-screen w-full flex flex-col items-center justify-evenly  overflow-x-hidden md:top-10">
-          <div className="flex flex-col items-center gap-y-3 text-primary mt-10">
+        <div className="absolute top-0 h-screen w-full flex flex-col items-center justify-between  overflow-x-hidden md:top-10">
+          <div className="flex flex-col items-center gap-y-3 text-primary mt-20">
             <TextBlurIn as="h1" className="font-belleza text-4xl tracking-wide" word="SYIFA & AKBAR" />
             <TextBlurIn as="span" className="font-semibold text-xl" word="14.09.2024" />
           </div>
-          <TimerCountdown className="mt-4" />
-          <Marquee pauseOnHover className="[--gap:0.5rem] [--duration:15s] mb-6">
-            {photoGallery.map((gallery, idx) => {
-              if (idx >= 4) return;
+          <div className="space-y-4 mb-10">
+            <TimerCountdown className="px-6" />
+            <Marquee className="[--gap:0.5rem] [--duration:15s]">
+              {photoGallery.map((gallery, idx) => {
+                if (idx >= 7) return;
 
-              return <Image src={gallery.photo} width={480} height={720} className="w-20 object-cover" key={gallery.id} alt="" />;
-            })}
-          </Marquee>
+                return <Image src={gallery.photo} width={480} height={720} className="w-20 object-cover" key={gallery.id} alt="" />;
+              })}
+            </Marquee>
+          </div>
         </div>
       </section>
       <section className="bg-gradient-to-br from-primary to-secondary w-full flex flex-col text-center px-6 py-12" id="bride-and-groom">
