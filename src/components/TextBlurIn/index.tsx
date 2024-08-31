@@ -21,7 +21,7 @@ type TagType =
   | ForwardRefComponent<HTMLHeadingElement, HTMLMotionProps<"h1">>
   | ForwardRefComponent<HTMLParagraphElement, HTMLMotionProps<"p">>;
 
-const TextBlurIn = ({ word, as = "div", className, variant, duration = 1}: TextBlurProps) => {
+const TextBlurIn = ({ word, as = "div", className, variant, duration = 1 }: TextBlurProps) => {
   const defaultVariants = {
     hidden: { filter: "blur(10px)", opacity: 0 },
     visible: { filter: "blur(0px)", opacity: 1 },
@@ -34,7 +34,7 @@ const TextBlurIn = ({ word, as = "div", className, variant, duration = 1}: TextB
   const Tag: TagType = as === "div" ? motion.div : as === "span" ? motion.span : as === "h1" ? motion.h1 : motion.p;
 
   return (
-    <Tag ref={blurRef} initial="hidden" animate={isInView ? "visible": "hidden"} transition={{ duration }} variants={combinedVariants} className={cn(className, "font-display text-center font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]")}>
+    <Tag ref={blurRef} initial="hidden" animate={isInView ? "visible" : "hidden"} transition={{ duration }} variants={combinedVariants} className={cn(className, "text-center tracking-[-0.02em] md:text-7xl md:leading-[5rem]")}>
       {word}
     </Tag>
   );

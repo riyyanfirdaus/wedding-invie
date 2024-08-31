@@ -26,7 +26,7 @@ const RsvpForm = () => {
       <div className="flex flex-col items-center gap-1">
         <Fade
           as="h1"
-          className="font-dancing-script font-bold text-accent text-4xl text-center tracking-wider"
+          className="font-belleza text-accent text-4xl text-center tracking-wider"
           direction="down"
           framerProps={{
             show: { transition: { delay: 0.3 } },

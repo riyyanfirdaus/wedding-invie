@@ -8,3 +8,4 @@ export { default as PhotoGallery } from "./PhotoGallery";
 export { default as SubmitBtn } from "./SubmitBtn";
 export { default as TextBlurIn } from "./TextBlurIn";
 export { default as Fade } from "./Fade";
+export { default as NumberTicker } from "./NumberTicker";

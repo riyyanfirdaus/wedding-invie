@@ -27,30 +27,13 @@ const HeroCover = () => {
     <div className={`fixed z-30 min-h-screen max-w-[480px] w-full bg-primary ${isOpened}`}>
       <div className="relative min-h-screen w-full">
         <div className="h-screen relative">
-          <Image src={photoGallery[10].photo} width={480} height={720} className="h-screen object-cover" alt="" />;
+          <Image src={photoGallery[0].photo} width={480} height={720} className="h-screen object-cover" alt="" />;
           <span className="absolute inset-0 bg-gradient-to-t from-neutral-600/90 to-neutral-600/20" />
         </div>
         <div className="absolute bottom-0 h-screen w-full flex flex-col items-center justify-around">
-          <div className="text-center text-primary space-y-6">
-            <Fade
-              className="text-xl font-medium drop-shadow-xl"
-              direction="down"
-              framerProps={{
-                show: { transition: { delay: 0.2 } },
-              }}
-            >
-              THE WEDDING OF
-            </Fade>
-            <div className="space-y-4">
-              <LineBorderUp className="text-primary" />
-              <div className="flex flex-col items-center gap-y-4">
-                <div className="font-dancing-script font-bold text-2xl">
-                  <TextBlurIn as="h1" word="Akbar & Syifa" className="text-4xl drop-shadow-xl" />
-                </div>
-                <TextBlurIn as="span" word="14.09.2024" className="font-semibold text-xl drop-shadow-xl" />
-              </div>
-              <LineBorderDown className="text-primary" />
-            </div>
+          <div className="text-center text-primary space-y-3">
+            <TextBlurIn as="h1" word="SYIFA & AKBAR" className="font-belleza text-3xl drop-shadow-xl" />
+            <TextBlurIn as="p" word="14.09.2024" className="font-semibold text-xl drop-shadow-xl" />
           </div>
           <div>
             <div className="mt-12 mb-8 text-center text-primary px-4">

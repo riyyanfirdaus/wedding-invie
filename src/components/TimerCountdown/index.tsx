@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { NumberBox } from "./NumberBox";
 
-const TimerCountdown = () => {
+const TimerCountdown = ({ className }: { className?: string }) => {
   let time = 7;
   let [days, setDays] = useState<number | string>(0);
   let [hours, setHours] = useState<number | string>(0);
@@ -94,7 +94,7 @@ const TimerCountdown = () => {
   }
 
   return (
-    <div className="rounded-xl">
+    <div className={`${className} rounded-xl`}>
       <div className="flex items-center justify-between mt-2 rounded-xl">
         <NumberBox num={days} unit="Days" flip={daysFlip} />
         <span className="hidden text-xl -mt-8 md:inline-block md:text-7xl font-normal text-gray-50 ">:</span>
