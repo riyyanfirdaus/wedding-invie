@@ -13,35 +13,30 @@ export const photoGallery = [
   },
   {
     id: 4,
-    photo: "https://res.cloudinary.com/devyan/image/upload/f_auto,q_auto/v1/Syifa%20Akbar%20Wedding/furzymqrahsshe879smu",
-  },
-  {
-    id: 5,
     photo: "https://res.cloudinary.com/devyan/image/upload/f_auto,q_auto/v1/Syifa%20Akbar%20Wedding/jpjwvqou1aztnamldlhg",
   },
   {
-    id: 6,
+    id: 5,
     photo: "https://res.cloudinary.com/devyan/image/upload/f_auto,q_auto/v1/Syifa%20Akbar%20Wedding/zslygzuveaznsdp98jfq",
   },
   {
-    id: 7,
+    id: 6,
     photo: "https://res.cloudinary.com/devyan/image/upload/f_auto,q_auto/v1/Syifa%20Akbar%20Wedding/qobwuum02tz2spf9ioj4",
   },
   {
-    id: 8,
+    id: 7,
     photo: "https://res.cloudinary.com/devyan/image/upload/v1722934436/Syifa%20Akbar%20Wedding/DSCF5549-2_copy_2_b3gpwx.jpg",
   },
   {
-    id: 9,
+    id: 8,
     photo: "https://res.cloudinary.com/devyan/image/upload/f_auto,q_auto/v1/Syifa%20Akbar%20Wedding/sqmxrskpjwzgtmq8kiao",
   },
-  { id: 10, photo: "https://res.cloudinary.com/devyan/image/upload/v1722934436/Syifa%20Akbar%20Wedding/DSCF5549-2_copy_2_b3gpwx.jpg" },
   {
-    id: 11,
+    id: 9,
     photo: "https://res.cloudinary.com/devyan/image/upload/v1722934435/Syifa%20Akbar%20Wedding/photo_6336632953261637229_y_onympl.jpg",
   },
   {
-    id: 12,
+    id: 10,
     photo: "https://res.cloudinary.com/devyan/image/upload/v1722934436/Syifa%20Akbar%20Wedding/DSCF5508-2_copy_tl0vje.jpg",
   },
 ];

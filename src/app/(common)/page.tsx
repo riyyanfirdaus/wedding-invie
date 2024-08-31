@@ -74,11 +74,11 @@ export default async function Home() {
           </div>
           <div className="space-y-10">
             <div className="flex flex-col items-end gap-y-3">
-              <Image className="object-cover w-60" src={photoGallery[4].photo} width={480} height={720} alt="" />
+              <Image className="object-cover w-60" src={photoGallery[3].photo} width={480} height={720} alt="" />
               <div className="flex flex-col items-end gap-y-2 pr-2">
                 <Fade
                   as="p"
-                  className="font-belleza text-accent text-lg tracking-wide"
+                  className="font-belleza text-accent text-xl tracking-wide"
                   direction="down"
                   framerProps={{
                     show: { transition: { delay: 0.3 } },
@@ -88,7 +88,7 @@ export default async function Home() {
                 </Fade>
                 <Fade
                   as="p"
-                  className="text-accent text-xs text-right"
+                  className="text-accent text-sm text-right"
                   direction="up"
                   framerProps={{
                     show: { transition: { delay: 0.3 } },
@@ -109,11 +109,11 @@ export default async function Home() {
               &
             </Fade>
             <div className="flex flex-col gap-y-3">
-              <Image className="object-cover w-60" src={photoGallery[5].photo} width={480} height={720} alt="" />
+              <Image className="object-cover w-60" src={photoGallery[4].photo} width={480} height={720} alt="" />
               <div className="flex flex-col items-start gap-y-2 pl-2">
                 <Fade
                   as="p"
-                  className="font-belleza text-accent text-lg tracking-wide"
+                  className="font-belleza text-accent text-xl tracking-wide"
                   direction="down"
                   framerProps={{
                     show: { transition: { delay: 0.3 } },
@@ -123,7 +123,7 @@ export default async function Home() {
                 </Fade>
                 <Fade
                   as="p"
-                  className="text-accent text-xs text-left"
+                  className="text-accent text-sm text-left"
                   direction="up"
                   framerProps={{
                     show: { transition: { delay: 0.3 } },

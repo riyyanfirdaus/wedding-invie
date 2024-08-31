@@ -22,17 +22,13 @@ const PhotoGallery = () => {
         </Fade>
         <LineBorderDown className="text-accent w-40" />
       </div>
-      <PhotoProvider>
-        <div className="grid grid-cols-2 gap-4">
-          {photoGallery.map((gallery) => (
-            <BlurFade key={gallery.id} delay={0.25 + gallery.id * 0.05} inView>
-              <PhotoView src={gallery.photo}>
-                <Image src={gallery.photo} width={320} height={640} className="h-64 object-cover rounded-md cursor-pointer" alt="" />
-              </PhotoView>
-            </BlurFade>
-          ))}
-        </div>
-      </PhotoProvider>
+      <div className="grid grid-cols-2 gap-4">
+        {photoGallery.map((gallery) => (
+          <BlurFade key={gallery.id} delay={0.25 + gallery.id * 0.05} inView>
+            <Image src={gallery.photo} width={320} height={640} className="h-64 object-cover rounded-md cursor-pointer" alt="" />
+          </BlurFade>
+        ))}
+      </div>
     </section>
   );
 };
