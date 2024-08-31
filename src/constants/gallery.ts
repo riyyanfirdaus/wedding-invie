@@ -7,17 +7,18 @@ export const photoGallery = [
     id: 2,
     photo: "https://res.cloudinary.com/devyan/image/upload/f_auto,q_auto/v1/Syifa%20Akbar%20Wedding/m5pfg7cxrz2czrxqpdkn",
   },
+  
   {
     id: 3,
-    photo: "https://res.cloudinary.com/devyan/image/upload/f_auto,q_auto/v1/Syifa%20Akbar%20Wedding/jpvs8mzblzm5tqspjsdn",
-  },
-  {
-    id: 4,
     photo: "https://res.cloudinary.com/devyan/image/upload/f_auto,q_auto/v1/Syifa%20Akbar%20Wedding/jpjwvqou1aztnamldlhg",
   },
   {
-    id: 5,
+    id: 4,
     photo: "https://res.cloudinary.com/devyan/image/upload/f_auto,q_auto/v1/Syifa%20Akbar%20Wedding/zslygzuveaznsdp98jfq",
+  },
+  {
+    id: 5,
+    photo: "https://res.cloudinary.com/devyan/image/upload/f_auto,q_auto/v1/Syifa%20Akbar%20Wedding/jpvs8mzblzm5tqspjsdn",
   },
   {
     id: 6,

@@ -5,17 +5,23 @@ import { Fade, SubmitBtn } from "@/components";
 import { useSearchParams } from "next/navigation";
 import { useRef } from "react";
 import { create } from "./action";
+import { toast } from "sonner";
 
 const RsvpForm = () => {
   const searchParams = useSearchParams();
   const guest = searchParams.get("kpd") ?? "Guest";
 
   const formRef = useRef<HTMLFormElement>(null);
+  const textRef = useRef<HTMLTextAreaElement>(null);
 
   const createAction = async (formData: FormData) => {
     try {
-      await create(formData);
-      formRef.current?.reset();
+      const msg = formData.get("messages");
+      if (msg?.length > 3) {
+        await create(formData);
+        toast.success("Berhasil mengirimkan pesan");
+        formRef.current?.reset();
+      }
     } catch (error) {
       throw new Error("error create data");
     }
@@ -58,6 +64,7 @@ const RsvpForm = () => {
           </label>
           <div className="mt-2">
             <textarea
+              ref={textRef}
               id="messages"
               name="messages"
               rows={3}

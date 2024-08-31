@@ -1,6 +1,7 @@
 import { BottomNav, HeroCover } from "@/components";
 import AudioProvider from "@/contexts/audioContext";
 import { Suspense } from "react";
+import { Toaster } from "sonner";
 
 const Homelayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -11,6 +12,7 @@ const Homelayout = ({ children }: { children: React.ReactNode }) => {
           {children}
           <BottomNav />
         </Suspense>
+        <Toaster />
       </div>
     </AudioProvider>
   );
