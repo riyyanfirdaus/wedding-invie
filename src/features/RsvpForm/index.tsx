@@ -16,8 +16,7 @@ const RsvpForm = () => {
 
   const createAction = async (formData: FormData) => {
     try {
-      const msg = formData.get("messages");
-      if (msg?.length > 3) {
+      if ((textRef.current?.value?.length as number) > 3) {
         await create(formData);
         toast.success("Berhasil mengirimkan pesan");
         formRef.current?.reset();
