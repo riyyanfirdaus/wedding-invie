@@ -9,3 +9,5 @@ export { default as SubmitBtn } from "./SubmitBtn";
 export { default as TextBlurIn } from "./TextBlurIn";
 export { default as Fade } from "./Fade";
 export { default as NumberTicker } from "./NumberTicker";
+export { default as CopyToClipboard } from "./CopyToClipboard";
+export { default as WeddingGift } from "./WeddingGift";

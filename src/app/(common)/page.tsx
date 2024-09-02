@@ -1,5 +1,5 @@
 import { LineBorderDown } from "@/assets/Icon";
-import { Fade, Marquee, Note, NumberTicker, PhotoGallery, TextBlurIn, TimerCountdown } from "@/components";
+import { Fade, Marquee, Note, NumberTicker, PhotoGallery, TextBlurIn, TimerCountdown, WeddingGift } from "@/components";
 import { photoGallery } from "@/constants/gallery";
 import { RsvpForm } from "@/features";
 import { neon } from "@neondatabase/serverless";
@@ -211,6 +211,7 @@ export default async function Home() {
         </div>
       </section>
       <PhotoGallery />
+      <WeddingGift />
       <RsvpForm />
       <section className="bg-accent w-full flex flex-col items-center space-y-8 px-6 py-12">
         <div className="flex flex-col items-center gap-1">

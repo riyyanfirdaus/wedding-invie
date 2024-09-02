@@ -7,8 +7,8 @@ const josefinSans = Josefin_Sans({ subsets: ["latin"], variable: "--font-josefin
 const belleza = Belleza({ subsets: ["latin"], variable: "--font-belleza", display: "swap", weight: ["400"] });
 
 export const metadata: Metadata = {
-  title: "Akbar & Syifa - Wedding Invie",
-  description: "Wedding invitation of Akbar & Syifa",
+  title: "The Wedding of Syifa & Akbar - Wedding Invie",
+  description: "Undangan Pernikahan Syifa & Akbar",
 };
 
 export default function RootLayout({
