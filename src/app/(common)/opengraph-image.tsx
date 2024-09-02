@@ -20,7 +20,7 @@ export default async function Image() {
           justifyContent: "center",
         }}
       >
-        <img src={photoGallery[0].photo} alt="Syifa & Akbar Wedding" />
+        <img src={photoGallery[0].photo} height={720} alt="Syifa & Akbar Wedding" />
       </div>
     ),
     {
