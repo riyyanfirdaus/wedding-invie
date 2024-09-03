@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Belleza, Josefin_Sans } from "next/font/google";
 import "./globals.css";
+import { photoGallery } from "@/constants/gallery";
 
 const josefinSans = Josefin_Sans({ subsets: ["latin"], variable: "--font-josefin-sans", display: "swap" });
 
@@ -9,6 +10,21 @@ const belleza = Belleza({ subsets: ["latin"], variable: "--font-belleza", displa
 export const metadata: Metadata = {
   title: "The Wedding of Syifa & Akbar - Wedding Invie",
   description: "Undangan Pernikahan Syifa & Akbar",
+  openGraph: {
+    title: "The Wedding of Syifa & Akbar - Wedding Invie",
+    description: "Undangan Pernikahan Syifa & Akbar",
+    url: "https://syifaakbar-wedding-invie.vercel.app/",
+    siteName: "Wedding Invie",
+    type: "website",
+    images: [
+      {
+        url: photoGallery[0].photo,
+        width: 480,
+        height: 720,
+        alt: "Syifa & Akbar Wedding",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
