@@ -20,8 +20,8 @@ export const metadata: Metadata = {
       {
         url: photoGallery[0].photo,
         secureUrl: photoGallery[0].photo,
-        width: 480,
-        height: 720,
+        width: 260,
+        height: 500,
         alt: "Syifa & Akbar Wedding",
         type: "image/png",
       },
