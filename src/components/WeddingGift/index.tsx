@@ -84,7 +84,7 @@ const WeddingGift = () => {
               </div>
               <div className="flex flex-col items-center">
                 <span className="inline text-xs text-accent">Pernikahan</span>
-                <p className="text-lg text-accent font-bold">14/09/2024</p>
+                <p className="text-sm text-accent font-bold">14/09/2024</p>
               </div>
             </div>
           </div>
@@ -107,14 +107,14 @@ const WeddingGift = () => {
               </div>
               <div className="flex flex-col items-center">
                 <span className="inline text-xs text-accent">Pernikahan</span>
-                <p className="text-lg text-accent font-bold">14/09/2024</p>
+                <p className="text-sm text-accent font-bold">14/09/2024</p>
               </div>
             </div>
           </div>
         </div>
       )}
       {isGift && (
-        <div className="w-full bg-gradient-to-br from-primary to-secondary flex flex-col items-center gap-y-4 rounded-lg shadow-lg py-6 mt-6">
+        <div className="w-full bg-gradient-to-br from-primary to-secondary flex flex-col items-center gap-y-4 rounded-lg shadow-lg py-8 mt-6">
           <Gift size={65} className="text-accent" />
           <h2 className="font-bold text-xl text-accent">Syifa Alfiah Fahrunnisa</h2>
           <div className="flex flex-col items-center gap-y-2">
