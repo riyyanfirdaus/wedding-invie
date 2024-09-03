@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "./og-img.jpg",
-        secureUrl: "./og-img.jpg",
+        url: "https://res.cloudinary.com/devyan/image/upload/v1725339852/Syifa%20Akbar%20Wedding/og-img_yt2voi.jpg",
+        secureUrl: "https://res.cloudinary.com/devyan/image/upload/v1725339852/Syifa%20Akbar%20Wedding/og-img_yt2voi.jpg",
         width: 260,
         height: 500,
         alt: "Syifa & Akbar Wedding",
