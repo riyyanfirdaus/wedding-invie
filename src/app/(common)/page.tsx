@@ -33,7 +33,7 @@ export default async function Home() {
               {photoGallery.map((gallery, idx) => {
                 if (idx >= 7) return;
 
-                return <Image src={gallery.photo} width={480} height={720} className="w-20 object-cover" key={gallery.id} alt="" />;
+                return <Image src={gallery.photo} width={480} height={720} className="w-20 object-cover" key={gallery.id} alt="" />
               })}
             </Marquee>
           </div>
